@@ -1,86 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-        <title>唤醒APP示例</title>
-        <style>
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                margin: 0;
-                font-family: Arial, sans-serif;
-            }
-            .container {
-                text-align: center;
-            }
-            .button {
-                padding: 15px 30px;
-                font-size: 16px;
-                color: #fff;
-                background-color: #007bff;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            .button:hover {
-                background-color: #0056b3;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>尝试打开APP</h1>
-            <button
-                class="button"
-                onclick="openAppOrRedirect()"
-            >
-                点击打开APP
-            </button>
-        </div>
-
-        <script>
-            function openAppOrRedirect() {
-                // APP的自定义URI scheme
-                const appScheme = 'aicottage://caotangli.aicottage.com/openPage?path=qualityGoods?params={\"params\":\"{ \"id)\": \"85dc432e-3cfc-2487-1eb1-3a14e6c4229a\" }\"}  '; // 替换成你自己的app scheme
-                // 应用商店的URL
-                const appStoreUrl = {
-                    ios: 'https://apps.apple.com/app/aicottage', // 替换成你自己的App Store链接
-                    android: 'https://play.google.com/store/apps/details?id=com.example.app' // 替换成你自己的Google Play链接
-                };
-                const id = '85dc432e-3cfc-2487-1eb1-3a14e6c4229a';
-                // 判断用户的设备类型
-                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-                const isAndroid = /Android/.test(navigator.userAgent);
-                if (isIOS) {
-                    // id是作品id，joinType是活动类型
-                        window.location.href = `https://ai.aiiiin.com/?path=goodDeatil&id=${id}`;
-                    } else {
-                        window.location.href =  `aicottage://caotangli.aicottage.com/openPage?path=goodDeatil&params={"params":{"id":"${encodeURIComponent(id)}"}}`
-                    }
-                // // 使用setTimeout来检测应用是否被唤醒
-                // const timeout = setTimeout(() => {
-                //     // 如果应用未被唤醒，则重定向到应用商店
-                //     window.location.href = isIOS ? appStoreUrl.ios : appStoreUrl.android;
-                // }, 1000);
-
-                // // 尝试通过iframe或其他方式唤醒应用
-                // const iframe = document.createElement('iframe');
-                // iframe.style.display = 'none';
-                // iframe.src = appScheme;
-
-                // document.body.appendChild(iframe);
-
-                // // 清除超时，表示应用被成功唤醒
-                // window.onblur = function () {
-                //     clearTimeout(timeout);
-                // };
-            }
-        </script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>打开APP</title>
+    <script type="module" crossorigin src="/assets/index-ChzRcu3H.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-8dbGeyHx.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
 </html>
